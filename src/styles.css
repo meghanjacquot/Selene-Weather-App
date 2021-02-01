@@ -61,3 +61,14 @@ text-align: center;
 color: rgb(255, 255, 255);
 font-weight: normal;
  }
+
+ .weather-temperature img {
+  margin-right: 5px;
+  height: 64px;
+  width: 64px;
+}
+.weather-temperature .units {
+  position: relative;
+  font-size: 16px;
+  top: -34px;
+}

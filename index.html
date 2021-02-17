@@ -12,7 +12,7 @@
     crossorigin="anonymous"
   />
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<link rel="stylesheet" href="/src/styles.css" type="text/css" />
+<link rel="stylesheet" href="/src/style.css" type="text/css" />
 <title>Selene Weather App</title>
 </head>
 <body>
@@ -53,40 +53,30 @@
             <h2 id="city"> 
               Good Day
             </h2>
-            <h3 id="date"> 
-            Today is 
-            </h3>
+            <div class="overview">
           </div>
-            <div class="clear-fix weather-temp">
-              <img src="" alt="Clear" id="icon" class="float-left" />
-              <div class="float-left"></div>
-               <strong id="temperature">19</strong> 
-                <span class="units">
-                <a href="#" id="celsius-link" class="active">°C</a> |
-                <a href="#" id="fahrenheit-link">°F</a>
-                </span>
-              </div>
-              </div>
-              </div>
-                <div class="row">
-                    <div class="col d-flex align-items-end">
-                      <ul id="detail-weather">
-                        <li>Humidity: <span id="humidity"></span>%</li>
-                        <li>Wind: <span id="wind"></span> km/h</li>
-                        <li id="description"> </li>
-                      </ul>
-                    </div>
-                    </div>
-              </span>
+            <ul>
+              <li>Today is <span id="date"></span></li>
+              <li id="description"></li>
+            </ul>
             </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      </form>
-          </div>
-        </div>
-      </div>
+            <div class="row">
+              <div class="col-6">
+                <div class="clearfix weather-temperature">
+                  <img src="" alt="Clear" id="icon" class="float-left" />
+                  <div class="float-left">
+                    <strong id="temperature"></strong><span class="units"><a href="#" id="celsius-link" class="active">°C</a> |
+                      <a href="#" id="fahrenheit-link">°F</a></span>
+              </div>
+              </div>
+              </div>
+                <div class="col-6">
+                  <ul>
+                    <li>Humidity: <span id="humidity"></span>%</li>
+                    <li>Wind: <span id="wind"></span> km/h</li>
+                  </ul>
+                    </div>
+                    </div>
     <p> 
       <br>
       <strong> Upcoming Weather Forecast: </p>

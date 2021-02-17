@@ -50,6 +50,12 @@ p {
   line-height: 1;
 }
 
+.humidity {
+  text-align: right;
+}
+.wind {
+  text-align: right;
+}
 h1 {
   color: blue;
 }

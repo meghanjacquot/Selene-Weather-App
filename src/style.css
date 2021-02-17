@@ -22,6 +22,7 @@ h3 {
   margin: 30px auto;
   width: 150px;
 }
+
 .card {
   padding: 0 20px;
   background: lightgoldenrodyellow;
@@ -34,6 +35,7 @@ h3 {
 .card:hover {
   background: #d9caff;
 }
+
 p {
   text-align: block;
   color: rgb(218, 215, 49);
@@ -41,6 +43,7 @@ p {
 }
 
 .temperature {
+  padding: 10px;
   color: rgb(89, 15, 226);
   font-size: 64px;
   font-weight: 400;

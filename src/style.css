@@ -77,7 +77,7 @@ ul {
   width: 64px;
 }
 .weather-temperature .units {
-  position: relative;
+  position: absolute;
   font-size: 16px;
   top: -40px;
 }

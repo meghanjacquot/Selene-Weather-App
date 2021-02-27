@@ -65,13 +65,12 @@ function showTemp(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   iconElement.setAttribute(
     "src",   
-  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
   
 }
 
-function dispalyForecast(response) {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
@@ -84,9 +83,7 @@ function dispalyForecast(response) {
         ${formatHours(forecast.dt * 1000)}
       </h3>
       <img
-        src="http://openweathermap.org/img/wn/${
-          forecast.weather[0].icon
-        }@2x.png"
+        src="http://openweathermap.org/img/wn/${forecast[0].icon}@2x.png"
       />
       <div class="weather-forecast-temperature">
         <strong>
@@ -112,7 +109,7 @@ function dispalyForecast(response) {
   //Calling the button click and geolocation and search city functions
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", currentPosition);
-  search("Washington, DC");
+  search("Chicago");
 
 
   

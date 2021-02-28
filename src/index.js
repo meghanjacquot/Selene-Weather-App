@@ -42,8 +42,15 @@ function currentPosition(event) {
   navigator.geolocation.getCurrentPosition(showMyPosition);
 }
 //Temperature and Weather Detail Function
-function showTemp(response) {
-  response.preventDefault();
+function showTemp(event) {
+  event.preventDefault();
+
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
+  document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#icon").innerHTML = response.data.icon[0].main;
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -95,7 +102,7 @@ function displayForecast(response) {
   function handlesubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-   search(cityInputElement.value);
+   searchCity(cityInputElement.value);
   }
   //Calling the replacement of the H2 function
   let form = document.querySelector("#searching-city");
@@ -105,7 +112,7 @@ function displayForecast(response) {
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", currentPosition);
 
-  search("Chicago");
+  searchCity("Chicago");
 
 
   

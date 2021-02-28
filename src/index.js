@@ -18,14 +18,11 @@ let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
 //City function
-function search(city) {
+function searchCity(city) {
   let apiKey = "955d3ec2ddb7dbaebd9db1a9e829cd75";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
-
-  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(displayForecast);
 
 }
 
@@ -35,8 +32,8 @@ function showMyPosition(position) {
   let lon = position.coords.longitude;
   let units = "metric";
   let apiKey = "955d3ec2ddb7dbaebd9db1a9e829cd75";
-  let apiAddress = "https://api.openweathermap.org/data/2.5/weather?q=";
- let apinewUrl = `${apiAddress}lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+  let apinewUrl = 'https://api.openweathermap.org/data/2.5/weather?q=${lat}&lon=${lon}&appid=${apiKey}&units={$units}';
+ 
   axios.get(apinewUrl).then(showMyPosition);
 }
 //Current Position function

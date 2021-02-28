@@ -21,7 +21,7 @@ function searchCity(City) {
   let apiKey = "955d3ec2ddb7dbaebd9db1a9e829cd75";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(City);
+  axios.get(apiUrl).then(showTemp);
 }
 
 //Geolocation function
@@ -40,8 +40,8 @@ function currentPosition(event) {
   navigator.geolocation.getCurrentPosition(showMyPosition);
 }
 //Temperature and Weather Detail Function
-function showTemp(event) {
-  event.preventDefault(); 
+function showTemp(response) {
+ 
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;

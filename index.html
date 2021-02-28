@@ -15,116 +15,100 @@
 
 <body>
   <div class="container">
-   
-        <h1>Selene 🌙 </h1>
-  <br />
-        
-        <hr />
-  
-        <div class="card">
-          <div class="card-body">
-            <form class ="search-form" id="searching-city">
-              <div class="form-group">
-                <input
-                  type="search"
-                  placeholder="Enter your City"
-                  class="form-control"
-                  autofocus="on"
-                  autocomplete="off"
-                  id="city-input"
-                  class="form-control shadow-sm"
-                  />
-              </div>
-             <button type="button" class="btn btn-success w-10" id="current-location-button">
-               Current Location </button>
-              <input 
-              id="search-button"
-              type="submit" 
-              value="Search" 
-              class="btn btn-primary shadow-sm"
-               />
-              <div class="form-group">
-                <br />
-            <h2 id="city"> 
+
+    <h1>Selene 🌙 </h1>
+    <br />
+
+    <hr />
+
+    <div class="card">
+      <div class="card-body">
+        <form class="search-form" id=searching-city>
+          <div class="form-group">
+            <input type="search" placeholder="Enter your City" class="form-control" autofocus="on" autocomplete="off"
+              id="city-input" class="form-control shadow-sm" />
+          </div>
+          <button type="button" class="btn btn-success w-10" id="current-location-button">
+            Current Location </button>
+          <input id="search-button" type="submit" value="Search" class="btn btn-primary shadow-sm" />
+          <div class="form-group">
+            <br />
+            <h2 id="city">
               Good Day
             </h2>
-            <div class="overview">
+            <h3 id="date">
+              Today is
+            </h3>
+            <div class="float-left">
+              <span class="temperature" id="temperature">19</span>
+              <span class="units">
+                <a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a>
+                <div class="row">
+                  <div class="col d-flex align-items-end">
+                    <ul id="detail-weather">
+                      <li>Humidity: <span id="humidity"></span>%</li>
+                      <li>Wind: <span id="wind"></span> km/h</li>
+                      <li id="description"> </li>
+                    </ul>
+                  </div>
+
+              </span>
+            </div>
           </div>
-            <ul id="detail-weather">
-              <li> <span id="date"></span></li>
-              <li id="description"></li>
-            </ul>
-            </div>
-            <div class="row">
-              <div class="col-6">
-                <div class="clearfix weather-temperature">
-                  <img src="" alt="Clear" id="icon" class="float-left" />
-                  <div class="float-left">
-                    <strong id="temperature"></strong><span class="units"><a href="#" id="celsius-link" class="active">°C</a> |
-                      <a href="#" id="fahrenheit-link">°F</a></span>
-              </div>
-              </div>
-              </div>
-                <div class="col-6">
-                  <ul id="detail-weather">
-                    <li>Humidity: <span id="humidity"></span>%</li>
-                    <li>Wind: <span id="wind"></span> km/h</li>
-                  </ul>
-                    </div>
-                  </span>
-                  </div>
-                  </div>
-                  </div>
-                    </form>
-                    </div>
-                    </div>
-                    </div>
-    <p> 
-      <br>
-      <strong> Upcoming Weather Forecast: </p>
-        <div class="row weather-forecast" id="forecast"></div>
-        </div>
-<div class="row">
-              <div class="col">Mon.</div>
-              <div class="col">Tues.</div>
-              <div class="col">Wed.</div>
-              <div class="col">Thurs.</div>
-              <div class="col">Fri.</div>
-            </div>
-<div class="row">
-         <div class="col">42 ºF 🌧 </div>
-          <div class="col">37 ºF 🌤 </div>
-           <div class="col">32 ºF ❄️ </div>
-           <div class="col">40 ºF ☀️ </div>
-           <div class="col">33 ºF 🌤 </div>
-</div>
- <div class="row">
-          <div class="col">6 ºC 🌧 </div>
-          <div class="col">3 ºC 🌤 </div>
-          <div class="col">0 ºC ❄️ </div>
-          <div class="col">4 ºC ☀️ </div>
-          <div class="col">1 ºC 🌤 </div>
-</div>
-<br />
-<p>
-Nothing in life is to be feared, it is only to be understood. <br /> Now is the time to understand more, so that we may fear less. <br />~ Marie Curie
+      </div>
 
-</p>
-
-     
-  </div>
-</div>
+      </form>
     </div>
+  </div>
+  </div>
+  <p>
+    <br>
+    <strong> Upcoming Weather Forecast:
+  </p>
+  <div class="row">
+    <div class="col">Mon.</div>
+    <div class="col">Tues.</div>
+    <div class="col">Wed.</div>
+    <div class="col">Thurs.</div>
+    <div class="col">Fri.</div>
+  </div>
+  <div class="row">
+    <div class="col">42 ºF 🌧 </div>
+    <div class="col">37 ºF 🌤 </div>
+    <div class="col">32 ºF ❄️ </div>
+    <div class="col">40 ºF ☀️ </div>
+    <div class="col">33 ºF 🌤 </div>
+  </div>
+  <div class="row">
+    <div class="col">6 ºC 🌧 </div>
+    <div class="col">3 ºC 🌤 </div>
+    <div class="col">0 ºC ❄️ </div>
+    <div class="col">4 ºC ☀️ </div>
+    <div class="col">1 ºC 🌤 </div>
+  </div>
+  <br />
+  <p>
+    Nothing in life is to be feared, it is only to be understood. <br /> Now is the time to understand more, so that we
+    may fear less. <br />~ Marie Curie
 
-    <img src="/images/image.jpg" alt="Lighthouse" class="Symbol" />
-    <p class="Programmer"> 
-      Weather App Selene Coded by Meghan Jacquot
-      <br/> 
-     
-     Click <a href="https://github.com/meghanjacquot/Selene-Weather-App" target="_blank">here</a> to access my github
-      
-    </p>
-    
-    <script src="src/index.js"></script>
-  </body>
+  </p>
+
+
+  </div>
+  </div>
+  </div>
+
+  <img src="/images/image.jpg" alt="Lighthouse" class="Symbol" />
+  <p class="Programmer">
+    Weather App Selene Coded by Meghan Jacquot
+    <br />
+  
+    Click <a href="https://github.com/meghanjacquot/Selene-Weather-App" target="_blank">here</a> to access my github
+  
+  </p>
+  
+  <script src="src/index.js"></script>
+</body>
+
 </html>

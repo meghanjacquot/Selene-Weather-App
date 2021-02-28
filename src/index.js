@@ -97,18 +97,19 @@ function displayForecast(response) {
 }
 
 //Replacing the H2 with the search value function
-  function handleSubmit(event) {
+  function handlesubmit(event) {
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-    search(cityInputElement.value);
+   search(cityInputElement.value);
   }
   //Calling the replacement of the H2 function
   let form = document.querySelector("#searching-city");
-  form.addEventListener("submit", handleSubmit);
+  form.addEventListener("submit", handlesubmit);
   
   //Calling the button click and geolocation and search city functions
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", currentPosition);
+
   search("Chicago");
 
 
@@ -131,6 +132,8 @@ function displayCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
+let form = document.querySelector("search-city");
+form.addEventListener
 
 let celsiusTemperature = null;
 

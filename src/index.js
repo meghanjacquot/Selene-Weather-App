@@ -7,7 +7,7 @@
     let month = months[now.getMonth()];
     let daily = now.getDate();
     let year = now.getFullYear();
-    return `This is a test ${day}, ${month} ${daily}, ${year}`;
+    return `Today is ${day}, ${month} ${daily}, ${year}`;
 
 }
 //calling the date function

@@ -16,7 +16,7 @@ let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
 //City function
-function searchCity() {
+function searchCity(City) {
   let city = document.querySelector("#city-input").value;
   let apiKey = "955d3ec2ddb7dbaebd9db1a9e829cd75";
   let units = "metric";
@@ -53,8 +53,8 @@ function showTemp(event) {
 //Replacing the H2 with the search value function
   function handleSubmit(event) {
     event.preventDefault();
-    let city = document.querySelector("#city-input").value;
-    searchCity(city);
+    let cityInputElement = document.querySelector("#city-input").value;
+    searchCity(cityInputElement);
   }
   //Calling the replacement of the H2 function
   let form = document.querySelector("#searching-city");
@@ -63,17 +63,35 @@ function showTemp(event) {
   //Calling the button click and geolocation and search city functions
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", currentPosition);
-  searchCity("Washington, DC");
+ 
   
 //The units are set to metric, which means Celcius, so we have a function to convert to Fahrenheit. 
 function convertToFahrenheitLink(event) {
-  event.preventDefault();
+ event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = (temperature * 9) / 5 + 32 ;
+
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 
 }
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
 
 //Calling the Fahrenheit conversion by clicking the link
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheitLink);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+ searchCity("Chicago");

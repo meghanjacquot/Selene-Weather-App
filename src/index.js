@@ -10,6 +10,22 @@
     return `Today is ${day}, ${month} ${daily}, ${year}`;
 
 }
+
+//Time function
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+
 //calling the date function
 let dateElement = document.querySelector("#date");
 let currentTime = new Date();
@@ -22,6 +38,9 @@ function searchCity(City) {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showTemp);
+
+    apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dispalyForecast);
 }
 
 //Geolocation function
@@ -66,6 +85,9 @@ function dispalyForecast(response) {
     forecast = response.data.list[index];
     forecastElement.innerHTML += `
     <div class="col-2">
+    <h4>
+        ${formatHours(forecast.dt * 1000)}
+      </h4>
 <img
         src="http://openweathermap.org/img/wn/${
           forecast.weather[0].icon

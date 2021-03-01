@@ -56,6 +56,32 @@ function showTemp(response) {
 
 }
 
+//Showing the upcoming weather
+function dispalyForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+<img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°
+        </strong>
+        ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
+  `;
+  }
+}
+
 //Replacing the H2 with the search value function
   function handleSubmit(event) {
     event.preventDefault();
@@ -83,6 +109,7 @@ function convertToFahrenheitLink(event) {
 
 }
 
+//Displaying Celcius temperatures 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
@@ -97,7 +124,9 @@ let celsiusTemperature = null;
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheitLink);
 
+//Calling for the Celcius conversion by clking the link
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
+//Calling for the searching of a city
  searchCity("Chicago");
